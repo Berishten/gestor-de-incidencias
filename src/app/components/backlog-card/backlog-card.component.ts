@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-backlog-card',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './backlog-card.component.scss'
 })
 export class BacklogCardComponent {
-
+  @Input() item?: string;
 }
