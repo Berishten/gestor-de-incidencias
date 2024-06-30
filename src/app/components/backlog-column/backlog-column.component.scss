@@ -1,0 +1,12 @@
+@import "../../../variables.scss";
+
+.card {
+  width: 350px;
+  height: 500px;
+  background-color: $blue-900;
+  color: white;
+
+  .card-body {
+    overflow-y: auto;
+  }
+}

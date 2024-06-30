@@ -1,3 +1,8 @@
+@import "../variables.scss";
+
 .principal-container {
-  height: calc(100vh - 40px);
+  background-color: $blue-800;
+  overflow-x: auto;
+  position: absolute;
+  left: 0;
 }
