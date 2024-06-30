@@ -2,7 +2,7 @@
   <div class="card-header">
     <div class="d-flex align-items-start">
       <h6>{{ title }}</h6>
-      <span class="badge text-bg-secondary ms-1">6</span>
+      <span class="badge text-bg-secondary ms-1">{{items.length}}</span>
       <i class="bi bi-three-dots ms-auto"></i>
     </div>
   </div>
@@ -14,7 +14,7 @@
     (cdkDropListDropped)="drop($event)"
   >
     @for (item of items; track item) {
-    <app-backlog-card cdkDrag [item]="item"></app-backlog-card>
+    <app-backlog-card class="box" cdkDrag [item]="item"></app-backlog-card>
     }
   </div>
 
