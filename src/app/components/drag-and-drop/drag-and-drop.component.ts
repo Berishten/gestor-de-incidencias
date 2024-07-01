@@ -10,6 +10,9 @@ import { BacklogColumnComponent } from "../backlog-column/backlog-column.compone
     imports: [CdkDropListGroup, BacklogColumnComponent]
 })
 export class DragAndDropComponent {
-  todo = ["Levantarse", "Cepillarse los dientes", "Desayunar", "Ir a trabajar", "Almorzar", "Volver a trabajar", "Cenar", "Dormir"];
+  backlog = ["Levantarse", "Cepillarse los dientes", "Desayunar", "Ir a trabajar", "Almorzar", "Volver a trabajar", "Cenar", "Dormir"];
+  inProgress = [];
+  qa = [];
   done = [];
+  ready = [];
 }

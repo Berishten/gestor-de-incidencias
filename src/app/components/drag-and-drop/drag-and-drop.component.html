@@ -1,4 +1,7 @@
-<div cdkDropListGroup class="hstack gap-2 principal-container px-2 py-3">
-  <app-backlog-column [title]="'Backlog'" [items]="todo"> </app-backlog-column>
-  <app-backlog-column [title]="'In Progress'" [items]="done"></app-backlog-column>
+<div cdkDropListGroup class="hstack gap-2 principal-container px-2 py-3 w-100">
+  <app-backlog-column [title]="'Backlog'" [items]="backlog"> </app-backlog-column>
+  <app-backlog-column [title]="'Ready'" [items]="ready"></app-backlog-column>
+  <app-backlog-column [title]="'In Progress'" [items]="inProgress"></app-backlog-column>
+  <app-backlog-column [title]="'QA'" [items]="qa"></app-backlog-column>
+  <app-backlog-column [title]="'Done'" [items]="done"></app-backlog-column>
 </div>
