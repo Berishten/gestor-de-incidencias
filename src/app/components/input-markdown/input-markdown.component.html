@@ -1,0 +1,13 @@
+<div class="d-flex">
+  <h6>Descripción</h6>
+  <button class="btn btn-secondary ms-auto" (click)="showMarkdownView = !showMarkdownView">Vista previa</button>
+</div>
+<br />
+<div *ngIf="!showMarkdownView">
+  <!-- Toggle view -->
+  <textarea class="variable-textarea w-100" [(ngModel)]="markdown"></textarea>
+</div>
+<div *ngIf="showMarkdownView">
+  <!-- Markdown view -->
+  <markdown lineHighlight class="variable-binding w-100" [data]="markdown"></markdown>
+</div>

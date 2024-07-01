@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Field, IssueFieldsComponent } from "../create-issue/issue-fields/issue-fields.component";
+import { InputMarkdownComponent } from "../input-markdown/input-markdown.component";
 
 @Component({
-  selector: 'app-sidebar',
-  standalone: true,
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss',
-  imports: [IssueFieldsComponent]
+    selector: 'app-sidebar',
+    standalone: true,
+    templateUrl: './sidebar.component.html',
+    styleUrl: './sidebar.component.scss',
+    imports: [IssueFieldsComponent, InputMarkdownComponent]
 })
 export class SidebarComponent {
   fields: Field[] = [
