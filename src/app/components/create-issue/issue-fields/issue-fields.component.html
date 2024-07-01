@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="row row-cols-2">
+    @for (field of fields; track $index) {
+    <div class="col">{{ field.name }}</div>
+    <div class="col">{{ field.value }}</div>
+    }
+  </div>
+</div>

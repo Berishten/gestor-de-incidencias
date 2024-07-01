@@ -1,23 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
-$theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$violet-palette,
-  ),
-  density: (
-    scale: -1
-  )
-));
+// $theme: mat.define-theme((
+//   color: (
+//     theme-type: dark,
+//     primary: mat.$violet-palette,
+//   ),
+//   density: (
+//     scale: -1
+//   )
+// ));
 
 @import "./variables.scss";
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: $blue-900;
   padding: 20px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Para navegadores basados en WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de scroll */
+  height: 8px; /* Alto de la barra de scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: $blue-600; /* Color de fondo de la pista */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue-400; /* Color de la barra de scroll */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $blue-300; /* Color de la barra de scroll cuando se pasa el cursor por encima */
+}

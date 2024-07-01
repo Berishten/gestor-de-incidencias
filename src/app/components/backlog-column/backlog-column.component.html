@@ -2,7 +2,9 @@
   <div class="card-header">
     <div class="d-flex align-items-start">
       <h6 class="m-0">{{ title }}</h6>
-      <span class="badge rounded-pill text-bg-primary ms-1">{{items.length}}</span>
+      <span class="badge rounded-pill text-bg-primary ms-1">{{
+        items.length
+      }}</span>
       <i class="bi bi-three-dots ms-auto"></i>
     </div>
   </div>
@@ -20,6 +22,9 @@
 
   <div
     class="card-footer text-body-secondary btn btn-secondary border-0 text-start"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#staticBackdrop"
+    aria-controls="staticBackdrop"
   >
     + Agregar
   </div>
