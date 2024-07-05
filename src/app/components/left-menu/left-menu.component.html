@@ -1,5 +1,5 @@
 <div
-  class="leftMenu d-flex justify-content-between border-end border-dark-subtle"
+  class="leftMenu d-flex justify-content-between border-end border-dark-subtle rounded-end-2"
 >
   <div
     class="colapse-button d-flex align-items-center h-100 px-1"
@@ -35,12 +35,12 @@
           data-bs-toggle="collapse"
           href="#proyectColapse{{ proyecto.id }}"
           role="button"
-          aria-expanded="true"
+          aria-expanded="false"
         >
           <i class="bi bi-folder2-open"></i>
         </a>
       </li>
-      <div class="collapse multi-collapse" id="proyectColapse{{proyecto.id}}">
+      <div class="collapse" id="proyectColapse{{proyecto.id}}">
         @for (box of proyecto.boxes; track $index) {
         <li class="box py-1 m-0 ps-4">
           <a routerLink="/drag-and-drop" routerLinkActive="active">
