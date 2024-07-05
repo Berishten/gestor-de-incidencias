@@ -11,14 +11,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './input-markdown.component.scss'
 })
 export class InputMarkdownComponent {
-  showMarkdownView = !false;
+  showMarkdownView = true;
 
   markdown = `## Error en vista 'Home'
 ---
 
 #### Descripción técnica
-\`\`\`typescript
-<span style="color: red;">import { Component } from '@angular/core';</span>
+\`\`\`js
+import { Component } from '@angular/core';
 \`\`\`
 
 

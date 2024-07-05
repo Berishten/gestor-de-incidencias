@@ -5,28 +5,31 @@
   id="staticBackdrop"
   aria-labelledby="staticBackdropLabel"
 >
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="staticBackdropLabel">Titulo editable</h5>
+  <div class="offcanvas-header d-flex flex-column pb-0">
     <button
       type="button"
       class="btn-close"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
     ></button>
+    <div class="offcanvas-title w-100 d-flex align-items-center">
+      <h3 class="border-bottom me-2" id="staticBackdropLabel">
+        Titulo editable
+      </h3>
+      <div class="edit-button me-auto">
+        <span>Editar</span>
+        <i class="bi bi-pencil-fill ms-1"></i>
+      </div>
+    </div>
   </div>
-  <div class="offcanvas-body">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-8">
-          <label for="descripcion">Descripción</label>
-          <app-input-markdown></app-input-markdown>
-        </div>
-        <div class="col-lg-4 border-start">
-          <app-issue-fields [fields]="fields"></app-issue-fields>
-          <hr />
-          <div class="text-danger p-3">
-            <i class="bi bi-trash"></i> Eliminar issue
-          </div>
+  <div class="offcanvas-body pt-0">
+    <div class="d-flex">
+      <app-input-markdown class="my-3 w-75"></app-input-markdown>
+      <div class="flex-shrink-1 w-25 mt-5">
+        <app-issue-fields [fields]="fields"></app-issue-fields>
+        <hr />
+        <div class="text-danger p-3">
+          <i class="bi bi-trash"></i> Eliminar issue
         </div>
       </div>
     </div>

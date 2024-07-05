@@ -1,0 +1,8 @@
+@import '../../../../variables.scss';
+.value {
+  &:hover {
+    cursor: pointer;
+    background-color: $blue-700;
+    border-radius: 3px
+  }
+}

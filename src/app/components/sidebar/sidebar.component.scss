@@ -3,3 +3,11 @@
 .offcanvas {
   background-color: $blue-900;
 }
+
+.edit-button {
+  font-size: .7em;
+  cursor: pointer;
+  &:hover {
+    color: $blue-200;
+  }
+}
