@@ -3,8 +3,6 @@
 .principal-container {
   background-color: $blue-800;
   overflow-x: auto;
-  position: absolute;
-  left: 0;
   height: calc(100% - 65px);
   overflow-y: hidden;
 }

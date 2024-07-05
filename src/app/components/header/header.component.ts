@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GlobalConfigService } from '../../services/global-config.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  globalConfigService = inject(GlobalConfigService);
 
+  openLeftMenu() {
+    this.globalConfigService.openLeftMenu();
+  }
 }

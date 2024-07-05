@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+.leftMenuOpen {
+  width: 200px;
+}
+
+.leftMenuClosed {
+  width: auto;
+}
+
+.colapsable {
+  cursor: pointer;
+  background-color: $blue-900;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $blue-600;
+  }
+}
+
+li {
+  list-style-type: none;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: $blue-800;
+    cursor: pointer;
+  }
+}
