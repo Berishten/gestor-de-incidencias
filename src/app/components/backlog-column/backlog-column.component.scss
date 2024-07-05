@@ -2,7 +2,7 @@
 
 .card {
   width: 350px;
-  height: 500px;
+  height: calc(100vh - 105px);
   background-color: $blue-900;
 
   .card-body {
