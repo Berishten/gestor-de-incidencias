@@ -1,28 +1,40 @@
 @import "../../../variables.scss";
 
-.leftMenuOpen {
-  width: 200px;
+.list-container {
+  width: 160px;
 }
 
-.leftMenuClosed {
-  width: auto;
-}
-
-.colapsable {
-  cursor: pointer;
+.leftMenu{
   background-color: $blue-900;
+  height: calc(100vh - 65px);
+  overflow-y: hidden;
+}
+
+.colapse-button {
+  cursor: pointer;
+  background-color: $blue-600;
   transition: background-color 0.3s ease;
+  box-shadow: inset 0 0 7px 1px rgb(0 0 0 / 37%);
 
   &:hover {
-    background-color: $blue-600;
+    background-color: $blue-500;
+    box-shadow: 0 0 5px 0 $blue-500;
   }
 }
 
-li {
-  list-style-type: none;
+.project {
+  list-style: none;
   transition: background-color 0.2s ease;
   &:hover {
-    background-color: $blue-800;
+    background-color: $blue-700;
     cursor: pointer;
+  }
+}
+
+.box {
+  list-style: none;
+  background-color: $blue-800;
+  &:hover {
+    background-color: $blue-700;
   }
 }

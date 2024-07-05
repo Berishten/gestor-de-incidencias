@@ -3,11 +3,11 @@ import { Field, IssueFieldsComponent } from "../create-issue/issue-fields/issue-
 import { InputMarkdownComponent } from "../input-markdown/input-markdown.component";
 
 @Component({
-    selector: 'app-sidebar',
-    standalone: true,
-    templateUrl: './sidebar.component.html',
-    styleUrl: './sidebar.component.scss',
-    imports: [IssueFieldsComponent, InputMarkdownComponent]
+  selector: 'app-sidebar',
+  standalone: true,
+  templateUrl: './sidebar.component.html',
+  styleUrl: './sidebar.component.scss',
+  imports: [IssueFieldsComponent, InputMarkdownComponent]
 })
 export class SidebarComponent {
   fields: Field[] = [
@@ -18,7 +18,5 @@ export class SidebarComponent {
     { name: 'Fecha de finalización', value: '2021-07-15' }
   ]
   constructor() {
-    console.log(false)
-    let a = 1
-   }
+  }
 }

@@ -1,33 +1,38 @@
-<div
-  class="h-100 border-end"
-  [ngClass]="{
-    leftMenuClosed: !isLeftMenuIsOpen,
-    leftMenuOpen: isLeftMenuIsOpen
-  }"
->
-  <div class="d-flex justify-content-between h-100">
-    @if (isLeftMenuIsOpen) {
-    <ul class="w-100 ps-4">
+<div class="leftMenu d-flex justify-content-between border-end border-dark-subtle">
+  <div
+    class="colapse-button d-flex align-items-center h-100 px-1"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseWidthExample"
+    [ariaExpanded]="isLeftMenuIsOpen"
+    aria-controls="collapseWidthExample"
+    (click)="openLeftMenu()"
+  >
+    <i
+      class="bi"
+      [ngClass]="{
+        'bi-arrow-bar-right': !isLeftMenuIsOpen,
+        'bi-arrow-bar-left': isLeftMenuIsOpen
+      }"
+    ></i>
+  </div>
+  <div class="collapse collapse-horizontal overflow-y-auto" id="collapseWidthExample">
+    <ul class="list-container ms-0 my-0 p-0">
       @for (proyecto of proyectos; track $index) {
-      <li class="py-1 border-bottom ps-1">
-        <a routerLink="/drag-and-drop" routerLinkActive="active">{{
-          proyecto.nombre
-        }}</a>
-      </li>
+        <li class="project py-1 border-bottom border-top border-dark-subtle ps-2 d-flex">
+          <a routerLink="/drag-and-drop" routerLinkActive="active">
+            {{ proyecto.nombre }}
+          </a>
+          <i class="bi bi-folder2-open ms-auto me-2"></i>
+        </li>
+        @for (box of proyecto.boxes; track $index) {
+        <li class="box py-1 m-0 ps-4">
+          <a routerLink="/drag-and-drop" routerLinkActive="active">
+            {{ box }}
+          </a>
+        </li>
+        }
       }
     </ul>
-    }
-    <div
-      class="colapsable d-flex align-items-center h-100 px-1"
-      (click)="openLeftMenu()"
-    >
-      <i
-        class="bi"
-        [ngClass]="{
-          'bi-arrow-bar-right': !isLeftMenuIsOpen,
-          'bi-arrow-bar-left': isLeftMenuIsOpen
-        }"
-      ></i>
-    </div>
   </div>
 </div>
