@@ -25,9 +25,12 @@
 .project {
   list-style: none;
   transition: background-color 0.2s ease;
+  height: 42px;
   &:hover {
     background-color: $blue-700;
-    cursor: pointer;
+    .openButton {
+      display: block;
+    }
   }
 }
 
@@ -37,4 +40,8 @@
   &:hover {
     background-color: $blue-700;
   }
+}
+
+.openButton {
+  display: none;
 }

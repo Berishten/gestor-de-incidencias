@@ -1,11 +1,13 @@
-<div class="leftMenu d-flex justify-content-between border-end border-dark-subtle">
+<div
+  class="leftMenu d-flex justify-content-between border-end border-dark-subtle"
+>
   <div
     class="colapse-button d-flex align-items-center h-100 px-1"
     type="button"
     data-bs-toggle="collapse"
-    data-bs-target="#collapseWidthExample"
+    data-bs-target="#collapseLeft"
     [ariaExpanded]="isLeftMenuIsOpen"
-    aria-controls="collapseWidthExample"
+    aria-controls="collapseLeft"
     (click)="openLeftMenu()"
   >
     <i
@@ -16,15 +18,29 @@
       }"
     ></i>
   </div>
-  <div class="collapse collapse-horizontal overflow-y-auto" id="collapseWidthExample">
+  <div
+    class="collapse collapse-horizontal overflow-y-auto"
+    id="collapseLeft"
+  >
     <ul class="list-container ms-0 my-0 p-0">
-      @for (proyecto of proyectos; track $index) {
-        <li class="project py-1 border-bottom border-top border-dark-subtle ps-2 d-flex">
-          <a routerLink="/drag-and-drop" routerLinkActive="active">
-            {{ proyecto.nombre }}
-          </a>
-          <i class="bi bi-folder2-open ms-auto me-2"></i>
-        </li>
+      @for (proyecto of proyectos; track proyecto.id) {
+      <li
+        class="project d-flex align-items-center py-1 border-bottom border-top border-dark-subtle ps-2 d-flex"
+      >
+        <a routerLink="/drag-and-drop" routerLinkActive="active">
+          {{ proyecto.nombre }}
+        </a>
+        <a
+          class="openButton btn btn-sm btn-outline-light ms-auto me-2"
+          data-bs-toggle="collapse"
+          href="#proyectColapse{{ proyecto.id }}"
+          role="button"
+          aria-expanded="true"
+        >
+          <i class="bi bi-folder2-open"></i>
+        </a>
+      </li>
+      <div class="collapse multi-collapse" id="proyectColapse{{proyecto.id}}">
         @for (box of proyecto.boxes; track $index) {
         <li class="box py-1 m-0 ps-4">
           <a routerLink="/drag-and-drop" routerLinkActive="active">
@@ -32,6 +48,8 @@
           </a>
         </li>
         }
+      </div>
+
       }
     </ul>
   </div>
