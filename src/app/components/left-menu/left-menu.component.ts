@@ -30,4 +30,15 @@ export class LeftMenuComponent {
     this.globalConfigService.openLeftMenu();
   }
 
+  nuevoProyecto() {
+    this.proyectos.push(
+      { id: this.proyectos.length + 1, nombre: 'Angular-blog', boxes: ["Backlog", "Ready", "InProgress", "QA", "Done"] }
+    );
+  }
+
+  nuevoBox(proyectId: number) {
+    const proyecto = this.proyectos.find(p => p.id === proyectId);
+    proyecto?.boxes.push('Nuevo Box');
+  }
+
 }

@@ -1,6 +1,9 @@
 <nav class="navbar border-bottom border-dark-subtle shadow">
-  <div class="container-fluid">
-    <a (click)="openLeftMenu()" class="navbar-brand py-0 d-flex align-items-center">
+  <div class="d-flex align-items-center w-100">
+    <a
+      (click)="openLeftMenu()"
+      class="navbar-brand py-0 d-flex align-items-center me-auto ms-4"
+    >
       <i class="bi bi-folder-fill fs-2 me-3"></i>
       <a href="">Proyectos / Angular blog</a></a
     >
@@ -15,5 +18,9 @@
         <i class="bi bi-search"></i>
       </button>
     </form>
+    <div class="profile-picture ms-3 me-3">
+      <img src="https://avatars.githubusercontent.com/u/36999337?v=4" alt="Foto de Perfil" class="img-fluid">
+    </div>
+
   </div>
 </nav>
