@@ -1,5 +1,6 @@
 <div class="d-flex">
   <app-left-menu></app-left-menu>
+  @if (getActiveProJect()) {
   <div
     cdkDropListGroup
     class="hstack gap-2 principal-container px-2 py-3 w-100 align-items-start ms-2"
@@ -8,5 +9,22 @@
     <app-backlog-column [box]="box" />
     }
   </div>
+  } @else {
+  <div
+    class="d-flex justify-content-center align-items-center w-100 h-100 my-auto"
+  >
+    <a
+      class="abrirBtn px-3 py-1 rounded-2 shadow"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseLeft"
+      aria-expanded="false"
+      aria-controls="collapseLeft"
+    >
+      <h2 class="text-body-secondary">
+        <i class="bi bi-folder2-open me-3"></i>Abre un proyecto
+      </h2>
+    </a>
+  </div>
+  }
 </div>
 <app-sidebar></app-sidebar>

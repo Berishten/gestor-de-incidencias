@@ -6,35 +6,7 @@ import { Injectable } from '@angular/core';
 export class BoxService {
   projectOpened: Project | null = null;
 
-  projects: Project[] = [
-    {
-      id: 1, nombre: 'Proyecto 1', boxes: [
-        {
-          id: 1,
-          title: 'Backlog',
-          cards: [
-            { id: 1, title: 'Card 1', description: 'Description', assignee: 'Assignee', status: 'Backlog' },
-            { id: 2, title: 'Card 2', description: 'Description', assignee: 'Assignee', status: 'Done' }
-          ]
-        },
-        {
-          id: 2,
-          title: 'In Progress',
-          cards: [
-            { id: 3, title: 'Card 3', description: 'Description', assignee: 'Assignee', status: 'In Progress' }
-          ]
-        },
-        {
-          id: 3,
-          title: 'Done',
-          cards: [
-            { id: 4, title: 'Card 4', description: 'Description', assignee: 'Assignee', status: 'Done' }
-          ]
-        }
-      ]
-    },
-    { id: 2, nombre: 'Proyecto 2', boxes: [] }
-  ];
+  projects: Project[] = [];
 
   getOpenProject() {
     return this.projectOpened;

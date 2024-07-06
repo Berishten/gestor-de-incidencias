@@ -6,3 +6,13 @@
   height: calc(100% - 65px);
   overflow-y: hidden;
 }
+
+.abrirBtn {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: $blue-700;
+
+  &:hover {
+    background-color: $blue-600;
+  }
+}
