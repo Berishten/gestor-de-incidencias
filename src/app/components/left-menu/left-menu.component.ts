@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { GlobalConfigService } from '../../services/global-config.service';
 import { NgClass } from '@angular/common';
+import { BoxService } from '../../services/box.service';
 
 @Component({
   selector: 'app-left-menu',
@@ -10,35 +11,33 @@ import { NgClass } from '@angular/common';
   styleUrl: './left-menu.component.scss'
 })
 export class LeftMenuComponent {
-  proyectos = [
-    { id: 1, nombre: 'Proyecto 1', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 2, nombre: 'Proyecto 2', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 3, nombre: 'Proyecto 3', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 4, nombre: 'Proyecto 4', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 5, nombre: 'Proyecto 5', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 6, nombre: 'Proyecto 6', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 7, nombre: 'Proyecto 7', boxes: ["Backlog", "Ready", "ToDo"] },
-    { id: 8, nombre: 'Proyecto 8', boxes: ["Backlog", "Ready", "ToDo"] }
-  ];
   globalConfigService = inject(GlobalConfigService);
+  boxService = inject(BoxService);
+
+  get proyectos() {
+    return this.boxService.getProjects();
+  }
 
   get isLeftMenuIsOpen() {
     return this.globalConfigService.isLeftMenuIsOpen;
+  }
+
+  addProject() {
+    this.boxService.addProject({ id: this.proyectos.length + 1, nombre: 'Nuevo Proyecto', boxes: [] });
   }
 
   openLeftMenu() {
     this.globalConfigService.openLeftMenu();
   }
 
-  nuevoProyecto() {
-    this.proyectos.push(
-      { id: this.proyectos.length + 1, nombre: 'Angular-blog', boxes: ["Backlog", "Ready", "InProgress", "QA", "Done"] }
-    );
+  nuevoBox(projectId: number) {
+    const proyecto = this.proyectos.find(p => p.id === projectId);
+    proyecto?.boxes.push({ id: proyecto.boxes.length + 1, title: 'Nuevo Box', cards: [] });
   }
 
-  nuevoBox(proyectId: number) {
-    const proyecto = this.proyectos.find(p => p.id === proyectId);
-    proyecto?.boxes.push('Nuevo Box');
+  openProject(projectId: number) {
+    const project = this.proyectos.find(p => p.id === projectId);
+    this.boxService.projectOpened = project || null;
   }
 
 }

@@ -4,15 +4,9 @@
     cdkDropListGroup
     class="hstack gap-2 principal-container px-2 py-3 w-100 align-items-start ms-2"
   >
-    <app-backlog-column [title]="'Backlog'" [items]="backlog">
-    </app-backlog-column>
-    <app-backlog-column [title]="'Ready'" [items]="ready"></app-backlog-column>
-    <app-backlog-column
-      [title]="'In Progress'"
-      [items]="inProgress"
-    ></app-backlog-column>
-    <app-backlog-column [title]="'QA'" [items]="qa"></app-backlog-column>
-    <app-backlog-column [title]="'Done'" [items]="done"></app-backlog-column>
+    @for (box of getActiveProJect()?.boxes; track box.id) {
+    <app-backlog-column [box]="box" />
+    }
   </div>
 </div>
 <app-sidebar></app-sidebar>

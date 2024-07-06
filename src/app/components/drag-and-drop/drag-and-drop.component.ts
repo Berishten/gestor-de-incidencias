@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CdkDropListGroup } from '@angular/cdk/drag-drop';
 import { BacklogColumnComponent } from "../backlog-column/backlog-column.component";
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { LeftMenuComponent } from "../left-menu/left-menu.component";
+import { BoxService, Project } from '../../services/box.service';
 
 @Component({
     selector: 'app-drag-and-drop',
@@ -12,9 +13,10 @@ import { LeftMenuComponent } from "../left-menu/left-menu.component";
     imports: [CdkDropListGroup, BacklogColumnComponent, SidebarComponent, LeftMenuComponent]
 })
 export class DragAndDropComponent {
-  backlog = ["Levantarse", "Cepillarse los dientes", "Desayunar", "Ir a trabajar", "Almorzar", "Volver a trabajar", "Cenar", "Dormir"];
-  inProgress = [];
-  qa = [];
-  done = [];
-  ready = [];
+  boxesService = inject(BoxService);
+
+  getActiveProJect(): Project | null {
+    return this.boxesService.projectOpened;
+  }
+
 }

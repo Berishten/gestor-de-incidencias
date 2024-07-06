@@ -1,9 +1,9 @@
 <div class="card">
   <div class="card-header">
     <div class="d-flex align-items-start">
-      <h6 class="m-0">{{ title }}</h6>
+      <h6 class="m-0">{{ box.title }}</h6>
       <span class="badge rounded-pill text-bg-primary ms-1">{{
-        items.length
+        box.cards.length
       }}</span>
       <i class="bi bi-three-dots ms-auto"></i>
     </div>
@@ -11,12 +11,12 @@
 
   <div
     cdkDropList
-    [cdkDropListData]="items"
+    [cdkDropListData]="box.cards"
     class="card-body"
     (cdkDropListDropped)="drop($event)"
   >
-    @for (item of items; track item) {
-    <app-backlog-card class="box" cdkDrag [item]="item"></app-backlog-card>
+    @for (card of box.cards; track $index) {
+    <app-backlog-card class="box" cdkDrag [item]="card.title"></app-backlog-card>
     }
   </div>
 
@@ -25,6 +25,7 @@
     data-bs-toggle="offcanvas"
     data-bs-target="#staticBackdrop"
     aria-controls="staticBackdrop"
+    (click)="createCard()"
   >
     + Agregar
   </div>

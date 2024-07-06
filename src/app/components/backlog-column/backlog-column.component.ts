@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { BacklogCardComponent } from "../backlog-card/backlog-card.component";
 import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Box, BoxService, Card } from '../../services/box.service';
 
 @Component({
   selector: 'app-backlog-column',
@@ -10,9 +11,10 @@ import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray, transferArrayItem }
   imports: [BacklogCardComponent, CdkDropList, CdkDrag]
 })
 export class BacklogColumnComponent {
-  @Input() title?: string;
-  @Input() items: string[] = [];
-  drop(event: CdkDragDrop<string[]>) {
+  @Input() box: Box = { id: 0, title: '', cards: [] };
+  boxService = inject(BoxService);
+
+  drop(event: CdkDragDrop<Card[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -23,5 +25,17 @@ export class BacklogColumnComponent {
         event.currentIndex,
       );
     }
+  }
+
+  createCard() {
+    const newCard: Card = {
+      id: this.box.cards.length + 1,
+      title: 'New Card',
+      description: 'Description',
+      assignee: 'Assignee',
+      status: 'Backlog'
+    };
+
+    this.box.cards.push(newCard);
   }
 }

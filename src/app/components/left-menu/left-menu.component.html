@@ -39,6 +39,7 @@
             href="#proyectColapse{{ proyecto.id }}"
             role="button"
             aria-expanded="false"
+            (click)="openProject(proyecto.id)"
           >
             <i class="bi bi-folder2-open"></i>
           </a>
@@ -47,7 +48,7 @@
           @for (box of proyecto.boxes; track $index) {
           <li class="box py-1 m-0 ps-4">
             <a routerLink="/drag-and-drop" routerLinkActive="active">
-              {{ box }}
+              {{ box.title }}
             </a>
           </li>
           }
@@ -59,7 +60,7 @@
       <div class="mt-auto position-sticky bottom-0">
         <button
           class="btn btn-primary rounded-0 btn-sm w-100 px-auto"
-          (click)="nuevoProyecto()"
+          (click)="addProject()"
         >
           Nuevo <i class="bi bi-folder-plus mr-2"></i>
         </button>
