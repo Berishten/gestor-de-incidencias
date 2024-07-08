@@ -46,3 +46,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: $blue-300; /* Color de la barra de scroll cuando se pasa el cursor por encima */
 }
+
+input, textarea {
+  background-color: $blue-700;
+}

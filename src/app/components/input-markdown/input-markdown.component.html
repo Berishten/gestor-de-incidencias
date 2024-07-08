@@ -1,17 +1,20 @@
-<div class="d-flex align-items-center w-100">
-  <h6 class="text-muted">Berishten 25/02/2024</h6>
+<div class="contenedor shadow d-flex align-items-center w-100 position-sticky top-0 mb-3">
+  <h6 class="text-muted ms-3">Berishten 25/02/2024</h6>
   <button
-    class="btn btn-secondary ms-auto mb-2"
+    class="btn btn-secondary btn-sm ms-auto mb-2"
     (click)="showMarkdownView = !showMarkdownView"
   >
     {{ showMarkdownView ? "Editar" : "Vista previa" }}
+    @if (showMarkdownView) {
+    <i class="bi bi-pencil-fill ms-1"></i>
+    }
   </button>
 </div>
 <div *ngIf="!showMarkdownView">
   <!-- Toggle view -->
-  <textarea class="variable-textarea w-100" [(ngModel)]="markdown"></textarea>
+  <textarea class="variable-textarea w-100 ms-3" [(ngModel)]="markdown"></textarea>
 </div>
-<div *ngIf="showMarkdownView">
+<div *ngIf="showMarkdownView" class="ps-3">
   <!-- Markdown view -->
   <markdown
     lineHighlight

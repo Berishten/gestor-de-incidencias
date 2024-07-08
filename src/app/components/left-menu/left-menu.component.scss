@@ -24,9 +24,10 @@
 .project {
   list-style: none;
   transition: background-color 0.2s ease;
-  height: 42px;
+  height: 30px;
   &:hover {
     background-color: $blue-700;
+    cursor: pointer;
     .openButton {
       display: block;
     }
@@ -43,4 +44,5 @@
 
 .openButton {
   display: none;
+  height: inherit;
 }

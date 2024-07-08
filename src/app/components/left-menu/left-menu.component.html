@@ -1,5 +1,5 @@
 <div
-  class="leftMenu d-flex justify-content-between border-end border-dark-subtle rounded-end-2"
+  class="leftMenu d-flex justify-content-between border-end border-dark-subtle"
 >
   <div
     class="colapse-button d-flex align-items-center h-100 px-1"
@@ -23,7 +23,8 @@
       <ul class="list-container ms-0 my-0 p-0">
         @for (proyecto of proyectos; track proyecto.id) {
         <li
-          class="project d-flex align-items-center py-1 border-bottom border-top border-dark-subtle ps-2 d-flex"
+          class="project d-flex align-items-center border-bottom border-top border-dark-subtle ps-2 d-flex"
+          (click)="openProject(proyecto.id)"
         >
           <a routerLink="/drag-and-drop" routerLinkActive="active">
             {{ proyecto.nombre }}
@@ -33,7 +34,7 @@
             <i class="bi bi-plus"></i>
           </a>
           <!-- ABRIR PROYECTO -->
-          <a
+          <!-- <a
             class="openButton btn btn-sm btn-outline-light ms-1 me-2"
             data-bs-toggle="collapse"
             href="#proyectColapse{{ proyecto.id }}"
@@ -42,7 +43,7 @@
             (click)="openProject(proyecto.id)"
           >
             <i class="bi bi-folder2-open"></i>
-          </a>
+          </a> -->
         </li>
         <div class="collapse" id="proyectColapse{{ proyecto.id }}">
           @for (box of proyecto.boxes; track $index) {

@@ -1,5 +1,5 @@
 <div
-  class="offcanvas offcanvas-end w-75"
+  class="offcanvas offcanvas-end w-75 h-100"
   data-bs-backdrop="static"
   tabindex="-1"
   id="staticBackdrop"
@@ -22,14 +22,20 @@
       </div>
     </div>
   </div>
-  <div class="offcanvas-body pt-0">
-    <div class="d-flex">
-      <app-input-markdown class="my-3 w-75"></app-input-markdown>
-      <div class="flex-shrink-1 w-25 mt-5">
-        <app-issue-fields [fields]="fields"></app-issue-fields>
-        <hr />
-        <div class="text-danger p-3">
-          <i class="bi bi-trash"></i> Eliminar issue
+  <div class="offcanvas-body h-100 p-0">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-md-8 p-0">
+          <app-input-markdown class="my-3 w-75"></app-input-markdown>
+        </div>
+        <div class="col-md shadow h-100 p-0">
+          <div class="position-sticky top-0">
+            <app-issue-fields class="" [fields]="fields"></app-issue-fields>
+            <hr />
+            <div class="text-danger p-3">
+              <i class="bi bi-trash"></i> Eliminar issue
+            </div>
+          </div>
         </div>
       </div>
     </div>
