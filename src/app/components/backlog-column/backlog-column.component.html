@@ -1,11 +1,13 @@
 <div class="card">
   <div class="card-header">
-    <div class="d-flex align-items-start">
+    <div class="d-flex align-items-center">
       <h6 class="m-0">{{ box.title }}</h6>
       <span class="badge rounded-pill text-bg-primary ms-1">{{
         box.cards.length
       }}</span>
-      <i class="bi bi-three-dots ms-auto"></i>
+      <app-icon-button class="ms-auto" [action]="showColumnOptions">
+        <i ngProjectAs="button-icon" class="bi bi-three-dots ms-auto"></i>
+      </app-icon-button>
     </div>
   </div>
 
