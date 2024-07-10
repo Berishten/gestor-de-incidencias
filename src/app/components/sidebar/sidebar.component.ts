@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Field, IssueFieldsComponent } from "../create-issue/issue-fields/issue-fields.component";
 import { InputMarkdownComponent } from "../input-markdown/input-markdown.component";
+import { RightSidebarService } from '../../services/right-sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,13 +11,17 @@ import { InputMarkdownComponent } from "../input-markdown/input-markdown.compone
   imports: [IssueFieldsComponent, InputMarkdownComponent]
 })
 export class SidebarComponent {
-  fields: Field[] = [
-    { name: 'Asignado', value: 'Berishten' },
-    { name: 'Estado', value: 'Abierto' },
-    { name: 'Prioridad', value: 'Media' },
-    { name: 'Fecha de inicio', value: '2021-08-01' },
-    { name: 'Fecha de finalización', value: '2021-07-15' }
-  ]
-  constructor() {
+  sidebarService = inject(RightSidebarService);
+
+  get titulo() {
+    return this.sidebarService.getTitulo;
+  };
+
+  get descripcion() {
+    return this.sidebarService.getDescripcion;
+  }
+
+  get fields(): Field[] {
+    return this.sidebarService.getFields;
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, VERSION } from '@angular/core';
+import { Component, Input, VERSION } from '@angular/core';
 import { MarkdownComponent } from 'ngx-markdown'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,23 +11,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './input-markdown.component.scss'
 })
 export class InputMarkdownComponent {
+  @Input() markdown: string | null = '';
   showMarkdownView = true;
-
-  markdown = `## Error en vista 'Home'
----
-
-#### Descripción técnica
-\`\`\`js
-import { Component } from '@angular/core';
-\`\`\`
-
-
-### Lists
-1. Ordered list
-2. Another bullet point
-   - Unordered list
-   - Another unordered bullet
-
-### Blockquote
-> Blockquote to the max`;
 }
